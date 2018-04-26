@@ -1,0 +1,176 @@
+{% extends "menus/base.html" %}
+
+{% block title %}
+    Menu
+{% endblock %}
+
+{% block body %}
+        <h1>Menu</h1>
+        <h3>Regular Pizza</h3>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Small</th>
+                <th>Large</th>
+            </tr>
+        {% for menu in menus %}
+            {% if menu.item == "Regular-Pizza" %}
+            <style>
+                table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                }
+            </style>
+                <tr>
+                    <td>{{ menu.subItem }}</td>
+                    <td>{{ menu.priceSmall }}</td>
+                    <td>{{ menu.priceLarge }}</td>
+                </tr>
+              {% endif %}
+          {% endfor %}
+        </table>
+
+        <h3>Sicilian Pizza</h3>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Small</th>
+                <th>Large</th>
+            </tr>
+        {% for menu in menus %}
+            {% if menu.item == "Sicilian-Pizza" %}
+            <style>
+                table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                }
+            </style>
+                <tr>
+                    <td>{{ menu.subItem }}</td>
+                    <td>{{ menu.priceSmall }}</td>
+                    <td>{{ menu.priceLarge }}</td>
+                </tr>
+              {% endif %}
+          {% endfor %}
+        </table>
+
+        <h3>Toppings</h3>
+        <table>
+            <tr>
+                <th>Item</th>
+            </tr>
+        {% for toppinga in toppings %}
+            <style>
+                table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                }
+            </style>
+                <tr>
+                    <td>{{ toppinga.topping }}</td>
+                </tr>
+          {% endfor %}
+        </table>
+
+        <h3>Subs</h3>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Small</th>
+                <th>Large</th>
+            </tr>
+        {% for menu in menus %}
+            {% if menu.item == "Subs" %}
+            <style>
+                table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                }
+            </style>
+                <tr>
+                    <td>{{ menu.subItem }}</td>
+                    <td>{{ menu.priceSmall }}</td>
+                    <td>{{ menu.priceLarge }}</td>
+                </tr>
+              {% endif %}
+          {% endfor %}
+        </table>
+
+        <h3>Pasta</h3>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Small</th>
+                <th>Large</th>
+            </tr>
+        {% for menu in menus %}
+            {% if menu.item == "Pasta" %}
+            <style>
+                table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                }
+            </style>
+                <tr>
+                    <td>{{ menu.subItem }}</td>
+                    <td>{{ menu.priceSmall }}</td>
+                    <td>{{ menu.priceLarge }}</td>
+                </tr>
+              {% endif %}
+          {% endfor %}
+        </table>
+
+        <h3>Salads</h3>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Small</th>
+                <th>Large</th>
+            </tr>
+        {% for menu in menus %}
+            {% if menu.item == "Salads" %}
+            <style>
+                table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                }
+            </style>
+                <tr>
+                    <td>{{ menu.subItem }}</td>
+                    <td>{{ menu.priceSmall }}</td>
+                    <td>{{ menu.priceLarge }}</td>
+                </tr>
+              {% endif %}
+          {% endfor %}
+        </table>
+
+        <h3>Dinner Platters</h3>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Small</th>
+                <th>Large</th>
+            </tr>
+        {% for menu in menus %}
+            {% if menu.item == "Dinner-Platters" %}
+            <style>
+                table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                }
+            </style>
+                <tr>
+                    <td>{{ menu.subItem }}</td>
+                    <td>{{ menu.priceSmall }}</td>
+                    <td>{{ menu.priceLarge }}</td>
+                </tr>
+              {% endif %}
+          {% endfor %}
+        </table>
+
+        <br>
+        <h3><a href="{% url 'order' %}">Place an Order</a></h3>
+
+        <hr>
+        <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}

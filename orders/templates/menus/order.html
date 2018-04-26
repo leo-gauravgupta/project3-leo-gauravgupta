@@ -1,0 +1,52 @@
+{% extends "menus/base.html" %}
+
+{% block title %}
+    Order
+{% endblock %}
+
+{% block body %}
+<h1>Place an Order</h1>
+    <form action="{% url 'orderplace' %}" method="post">
+        {% csrf_token %}
+        <select name="Customer">
+                <option value={{ customers.id }}>{{ customers }}</option>
+        </select>
+        <select name="Item">
+            {% for order in orders %}
+                <option value={{ order.item }}>{{ order.item }}</option>
+            {% endfor %}
+        </select>
+        <select name="Subitem">
+          {% for order in orders %}
+              <option value={{ order.subItem }}>{{ order.subItem }}</option>
+          {% endfor %}
+        </select>
+        <select name="Toppings">
+          {% for topping in toppings %}
+              <option value={{ topping.topping }}>{{ topping.topping }}</option>
+          {% endfor %}
+        </select>
+        <select name="Size">
+              <option value="Small">Small</option>
+              <option value="Large">Large</option>
+        </select>
+        <input type="number" name="Quantity"><br>
+
+        <br>
+
+        <button name="Checkout" type="submit">Checkout</button>
+
+    </form>
+    <br>
+    {% if message %}
+        <div>
+            {{ message }}
+        </div>
+    {% endif %}
+
+    <br>
+    <a href="{% url 'menuindex' %}">Back to Menu</a>
+
+    <hr>
+    <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}

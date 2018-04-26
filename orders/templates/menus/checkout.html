@@ -1,0 +1,28 @@
+{% extends "menus/base.html" %}
+
+{% block title %}
+    Checkout
+{% endblock %}
+
+{% block body %}
+<h1>Checkout</h1>
+
+<ul>
+    <li>Customer Name: {{ customer.first }} {{ customer.last }}</li>
+    <li>Order Number: {{ orders.id }}</li>
+    <li>Order Item: {{ orders.order_item }}</li>
+    <li>Order Sub-Item: {{ orders.order_subItem }} </li>
+    <li>Order Toppings: {{ orders.order_toppings }} </li>
+    <li>Order Size: {{ orders.orderSize }} </li>
+    <p>-------------------------------------</p>
+    <li>Order Quantity: {{ orders.orderQty }} </li>
+    <li>Order Price: {{ orders.orderPrice }} </li>
+    <p>-------------------------------------</p>
+    <li>Order Total: {{ orders.orderCost }} </li>
+</ul>
+
+<br>
+<h3><a href="{% url 'order' %}">Place another Order</a></h3>
+<br>
+<a href="{% url 'menuindex' %}">Back to Menu</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+Django==2.0.3
+
+from django.contrib.auth import authenticate, login, logout, views as auth_views
+from django.contrib.auth.models import User
+from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.shortcuts import render, redirect
+from django.urls import reverse, reverse_lazy
+from django.views.generic import ListView, CreateView, UpdateView
+from django import forms
+from .forms import UserRegistrationForm
